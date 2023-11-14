@@ -7,21 +7,28 @@ set number
 set numberwidth=5
 set nocompatible
 set hidden
-colorscheme void
+colorscheme koehler 
 
-try
-  set undodir=~/.vim_runtime/undodir
+if has('persistent_undo')
+  let target_path = expand('~/.vim/undo')
+  if !isdirectory(target_path)
+      call system('mkdir -p ' . target_path)
+  endif
+  let &undodir = target_path
   set undofile
-catch
-endtry
+endif
 
 cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-cnoremap <C-K> <C-U>
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
 nmap <leader>w :w!<cr>
-map <leader>h :noh<cr>
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 
 command W w !sudo tee % > /dev/null
 
@@ -46,7 +53,6 @@ set listchars=tab:>-,trail:·,extends:»,precedes:«
 set ignorecase
 set smartcase
 set hlsearch
-:nnoremap <silent> <leader><Esc> :noh<Bar>:echo<CR>
 set incsearch
 set lazyredraw
 set magic
@@ -80,12 +86,6 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>x :tabn<cr>
 map <leader>z :tabp<cr>
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-nmap <leader>t :TagbarToggle<cr>
 
 let g:lasttab=1
 nmap <leader>tl :exe "tabn ".g:lasttab<CR>
@@ -99,14 +99,8 @@ endtry
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 set laststatus=2
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 map 9 ^
@@ -122,5 +116,33 @@ endfun
 
 execute pathogen#infect()
 
+nmap <leader>t :TagbarToggle<cr>
+
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-m> :NERDTreeFind<CR>
+let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+augroup DIRCHANGE
+  autocmd!
+  autocmd DirChanged global :NERDTreeCWD
+augroup END
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() > 0 || exists("s:std_in") | NERDTree | wincmd p | endif
+
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | NERDTree | endif
+
+autocmd VimEnter * if !argc() && !exists('') | NERDTree | endif
+
