@@ -21,11 +21,11 @@
     "Green Component" : 1
   },
   "Bold Color" : {
-    "Red Component" : 0.062745101749897003,
+    "Red Component" : 0.062745101749896975,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.062745101749897003,
+    "Blue Component" : 0.062745101749896975,
     "Alpha Component" : 1,
-    "Green Component" : 0.062745101749897003
+    "Green Component" : 0.062745101749896975
   },
   "Ansi 1 Color (Dark)" : {
     "Red Component" : 1,
@@ -72,7 +72,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.7960783839225769
   },
-  "Has Hotkey" : false,
+  "Has Hotkey" : true,
   "Blinking Cursor" : false,
   "Selected Text Color (Light)" : {
     "Red Component" : 0.94760048389434814,
@@ -81,6 +81,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.94760048389434814
   },
+  "Space" : 0,
   "Selected Text Color (Dark)" : {
     "Red Component" : 0.94760048389434814,
     "Color Space" : "Calibrated",
@@ -281,7 +282,7 @@
     "Color Space" : "sRGB",
     "Blue Component" : 0.11764705926179886,
     "Alpha Component" : 1,
-    "Green Component" : 0.098039217293262482
+    "Green Component" : 0.098039217293262454
   },
   "Ansi 11 Color (Light)" : {
     "Red Component" : 1,
@@ -475,11 +476,11 @@
     "Green Component" : 0.9042816162109375
   },
   "Foreground Color" : {
-    "Red Component" : 0.062745101749897003,
+    "Red Component" : 0.062745101749896975,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.062745101749897003,
+    "Blue Component" : 0.062745101749896975,
     "Alpha Component" : 1,
-    "Green Component" : 0.062745101749897003
+    "Green Component" : 0.062745101749896975
   },
   "Link Color (Light)" : {
     "Red Component" : 0.023000000044703484,
@@ -559,7 +560,7 @@
     "Alpha Component" : 1,
     "Green Component" : 1
   },
-  "Screen" : -1,
+  "Screen" : -2,
   "Ansi 4 Color (Dark)" : {
     "Red Component" : 0.58823531866073608,
     "Color Space" : "Calibrated",
@@ -622,7 +623,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.78105825185775757
   },
-  "Non Ascii Font" : "InconsolataNFM-Regular 24",
+  "Non Ascii Font" : "MesloLGLNerdFontC-RegularForPowerline 20",
   "Ansi 6 Color (Dark)" : {
     "Red Component" : 0.7764706015586853,
     "Color Space" : "Calibrated",
@@ -638,8 +639,8 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.77217715978622437
   },
-  "Custom Directory" : "Recycle",
-  "Working Directory" : "\/Users\/lumanlab",
+  "Custom Directory" : "Yes",
+  "Working Directory" : "~",
   "ASCII Anti Aliased" : true,
   "HotKey Window AutoHides" : true,
   "Shortcut" : "",
@@ -679,7 +680,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.7607843279838562
   },
-  "Normal Font" : "MonoLisaTrial-Regular 20",
+  "Normal Font" : "OperatorMono-Medium 25",
   "Unlimited Scrollback" : true,
   "Ansi 12 Color (Light)" : {
     "Red Component" : 0.7116503119468689,
@@ -688,6 +689,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.86277562379837036
   },
+  "Hide After Opening" : false,
   "Ansi 10 Color (Dark)" : {
     "Red Component" : 0.80941480398178101,
     "Color Space" : "Calibrated",
