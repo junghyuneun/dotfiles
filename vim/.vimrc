@@ -114,8 +114,6 @@ fu! CleanExtraSpaces()
   call setreg('/', old_query)
 endfun
 
-execute pathogen#infect()
-
 nmap <leader>t :TagbarToggle<cr>
 
 let g:airline#extensions#tabline#enabled = 1
@@ -131,18 +129,4 @@ let NERDTreeShowLineNumbers = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
-
-autocmd BufEnter NERD_tree_* | execute 'normal R'
-augroup DIRCHANGE
-  autocmd!
-  autocmd DirChanged global :NERDTreeCWD
-augroup END
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() > 0 || exists("s:std_in") | NERDTree | wincmd p | endif
-
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | NERDTree | endif
-
-autocmd VimEnter * if !argc() && !exists('') | NERDTree | endif
 
