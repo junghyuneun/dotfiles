@@ -7,7 +7,7 @@ set number
 set numberwidth=5
 set nocompatible
 set hidden
-colorscheme koehler 
+colorscheme seoul256
 
 if has('persistent_undo')
   let target_path = expand('~/.vim/undo')
@@ -47,6 +47,7 @@ set ruler
 set hid
 set showcmd
 set backspace=eol,start,indent
+set ambw="double"
 set whichwrap=<,>,b,s
 set listchars=tab:>-,trail:·,extends:»,precedes:«
 
@@ -67,6 +68,7 @@ set foldcolumn=1
 
 syntax enable
 set encoding=utf-8
+" set guifont=Symbols\ Nerd\ Font\ Mono:h24
 set ffs=unix,dos,mac
 
 set nobackup
