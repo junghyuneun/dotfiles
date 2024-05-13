@@ -7,7 +7,7 @@ set number
 set numberwidth=5
 set nocompatible
 set hidden
-colorscheme seoul256
+colorscheme Tomorrow-Night-Eighties
 
 if has('persistent_undo')
   let target_path = expand('~/.vim/undo')
@@ -131,4 +131,8 @@ let NERDTreeShowLineNumbers = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
+
+autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+              \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+              \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 

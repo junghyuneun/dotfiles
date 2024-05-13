@@ -1,7 +1,8 @@
 import requests
-token = "token"
-headers = {"Authorization": f"token {token}"}
-response = requests.get("https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest", headers=headers)
+# token = "token"
+# headers = {"Authorization": f"token {token}"}
+# response = requests.get("https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest", headers=headers)
+response = requests.get("https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest")
 response_json = response.json()
 for asset in response_json['assets']:
     if asset['name'].endswith('zip'):
