@@ -40,7 +40,7 @@ set showcmd
 set backspace=eol,start,indent
 set ambw="double"
 set whichwrap+=<,>,[,]
-set listchars=tab:⇤–⇥,space:·,trail:·,precedes:⇠,extends:⇢,nbsp:×
+set listchars=tab:>-,trail:.,precedes:<,extends:>,eol:$
 
 set ignorecase
 set smartcase
