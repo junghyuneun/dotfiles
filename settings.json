@@ -1,0 +1,156 @@
+{
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.fontSize": 20,
+  "editor.fontFamily": "Lab Grotesque",
+  "security.workspace.trust.enabled": false,
+  "javascript.preferGoToSourceDefinition": true,
+  "typescript.preferGoToSourceDefinition": true,
+  "debug.javascript.debugByLinkOptions": "on",
+  "editor.tabSize": 2,
+  "window.openWithoutArgumentsInNewWindow": "on",
+  "workbench.startupEditor": "newUntitledFile",
+  "emmet.preferences": {},
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "node"
+  },
+  "javascript.format.semicolons": "remove",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.preferences.quoteStyle": "single",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.implicitProjectConfig.target": "ESNext",
+  "javascript.validate.enable": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "apc.font.family": "PP Supply Sans",
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 28,
+    "fontSize": 14
+  },
+  "apc.electron": {
+    "trafficLightPosition": {
+      "x": 10,
+      "y": 8
+    },
+    "frame": false,
+    "transparent": true,
+    "titleBarStyle": "hiddenInset",
+    // "vibrancy": "light",
+    "vibrancy": "sheet",
+    "opacity": 0.87,
+    "visualEffectState": "active",
+  },
+  "apc.header": {
+    "height": 40,
+    "fontSize": 16
+  },
+  "apc.listRow": {
+    "height": 26,
+    "fontSize": 16
+  },
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          // the following elements will be in italic
+          "comment",
+          "storage.modifier", // static keyword
+          "storage.type.php", // typehints in methods keyword
+          "keyword.other.new.php", // new
+          "entity.other.attribute-name", // html attributes
+          "fenced_code.block.language.markdown", // markdown language modifier
+          "keyword", //import, export, return…
+          "storage.modifier", //static keyword
+          "storage.type", //class keyword
+          "keyword.control",
+          "constant.language",
+          "entity.other.attribute-name",
+          "entity.name.method",
+          "keyword.control.import.ts",
+          "keyword.control.import.tsx",
+          "keyword.control.import.js",
+          "keyword.control.flow.js",
+          "keyword.control.from.js",
+          "keyword.control.from.ts",
+          "keyword.control.from.tsx"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          // the following elements will be displayed in bold
+          "entity.name.type.class" // class names
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          // the following elements will be displayed in bold and italic
+          "entity.name.section.markdown" // markdown headlines
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          // the following elements will be excluded from italics
+          //   (VSCode has some defaults for italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json",
+          "comment.block",
+          "entity.other.attribute-name.class.css"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "workbench.colorCustomizations": {
+    "editorGroupHeader.tabsBackground": "#00000000",
+    "sideBar.background": "#00000000",
+    "sideBarSectionHeader.background": "#00000000",
+    "editor.background": "#00000000",
+    "peekViewEditor.background": "#00000000",
+    "peekViewEditorGutter.background": "#00000000",
+    "peekViewTitle.background": "#00000000",
+    "peekViewResult.background": "#00000000",
+    "tab.activeBackground": "#00000000",
+    "tab.inactiveBackground": "#00000000",
+    "statusBar.background": "#00000000",
+    "statusBar.debuggingBackground": "#00000000",
+    "statusBar.noFolderBackground": "#00000000",
+    "statusBarItem.activeBackground": "#00000000",
+    "panel.background": "#00000000",
+    "activityBar.background": "#00000000"
+  },
+  "animations.Install-Method": "Apc Customize UI++",
+  "apc.imports": [
+    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+  ],
+  "workbench.colorTheme": "Kary Pro Colors － Dark",
+  "animations.Focus-Dimming-Mode": "Everything But Editor",
+  "workbench.activityBar.location": "bottom"
+}
