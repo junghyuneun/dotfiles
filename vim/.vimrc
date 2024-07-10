@@ -88,7 +88,8 @@ nnoremap <S-Left> <C-w>>
 nnoremap <S-Up> <C-w>+
 nnoremap <S-Down> <C-w>-
 inoremap jj <Esc>
-
+nnoremap / /\v
+cnoremap %s/ %s/\v
 " auto close brackets
 inoremap { {<CR><BS>}<Esc>O
 inoremap \{ {
