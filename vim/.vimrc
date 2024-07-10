@@ -7,6 +7,7 @@ filetype plugin indent on
 set autochdir
 set langmenu=en
 set encoding=utf-8
+set fileencoding=utf-8
 set ffs=unix,dos,mac
 set nobackup
 set nowb
@@ -37,7 +38,7 @@ set wildmenu
 set history=500
 set backspace=eol,start,indent
 set ambw="double"
-set whichwrap+=<,>,[,]
+set whichwrap+=b,s,h,l,<,>,~,[,]
 set listchars=tab:>-,trail:.,precedes:<,extends:>,eol:$
 set wildmode=list:longest,list:full
 
