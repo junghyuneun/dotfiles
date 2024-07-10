@@ -1,11 +1,22 @@
 let g:mapleader=' '
+let $LANG='en'
 
+syntax enable
+filetype plugin indent on
+
+set autochdir
+set langmenu=en
+set encoding=utf-8
+set ffs=unix,dos,mac
+set nobackup
+set nowb
+set noswapfile
 set splitbelow
 set splitright
 set number
 set numberwidth=5
 set nocompatible
-set hidden
+set path+=**
 colorscheme onedark
 command W w !sudo tee % > /dev/null
 
@@ -18,23 +29,17 @@ if has('persistent_undo')
   set undofile
 endif
 
-set history=500
-filetype plugin on
-filetype indent on
 set autoread
-
-let $LANG='en'
-set langmenu=en
-
-set wildmenu
-set wildmode=list:longest,list:full
 set ruler
 set hid
 set showcmd
+set wildmenu
+set history=500
 set backspace=eol,start,indent
 set ambw="double"
 set whichwrap+=<,>,[,]
 set listchars=tab:>-,trail:.,precedes:<,extends:>,eol:$
+set wildmode=list:longest,list:full
 
 set ignorecase
 set smartcase
@@ -43,46 +48,34 @@ set incsearch
 set lazyredraw
 set magic
 set showmatch
-set mat=2
 set noerrorbells
 set novisualbell
 set t_vb=
 set t_RV=
+set mat=2
 set tm=500
 set foldcolumn=1
 
-syntax enable
-set encoding=utf-8
-set ffs=unix,dos,mac
-
-set nobackup
-set nowb
-set noswapfile
-
+set ai
+set si
 set expandtab
 set smarttab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-set ai
-set si
 
 try
-  set switchbut=useopen,usetab,newtab
+  set switchbuf=useopen,usetab,newtab
   set stal=2
 catch
 endtry
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-set laststatus=2
-set statusline+=%#warningmsg#
-set statusline+=%*
-
 " mappings
+map 8 <Home>
 map 9 ^
 map 0 $
-cnoremap <C-A> <Home>
 nmap <leader>w :w!<cr>
 nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
 nnoremap <C-h> <C-w>h
@@ -123,9 +116,39 @@ endfun
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onedark'
+
+set tabline=%!TabLine()
+
+function TabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    if i + 1 == tabpagenr()
+      let s ..= '%#TabLineSel#'
+    else
+      let s ..= '%#TabLine#'
+    endif
+
+    let s ..= '%' .. (i + 1) .. 'T'
+
+    let s ..= ' %{TabLabel(' .. (i + 1) .. ')} '
+  endfor
+
+  let s ..= '%#TabLineFill#%T'
+
+  if tabpagenr('$') > 1
+    let s ..= '%=%#TabLine#%999Xclose'
+  endif
+  return s
+endfunction
+
+function TabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  return bufname(buflist[winnr - 1])
+endfunction
 
 " NerdTree
 nnoremap <C-t> :NERDTreeToggle<CR>
