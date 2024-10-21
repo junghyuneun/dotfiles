@@ -4,6 +4,7 @@ let $LANG='en'
 syntax enable
 filetype plugin indent on
 
+set termguicolors
 set autochdir
 set langmenu=en
 set encoding=utf-8
@@ -18,7 +19,7 @@ set number
 set numberwidth=5
 set nocompatible
 set path+=**
-colorscheme onedark
+colorscheme dusklight
 command W w !sudo tee % > /dev/null
 
 if has('persistent_undo')
@@ -120,7 +121,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
+let g:airline_theme='base16color'
 
 set tabline=%!TabLine()
 
@@ -158,7 +159,7 @@ nnoremap <C-m> :NERDTreeFind<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeDirArrows = 1
-let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 0
 let NERDTreeAutoDeleteBuffer = 1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
