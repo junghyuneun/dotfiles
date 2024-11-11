@@ -1,0 +1,45 @@
+{
+  "_from": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball",
+  "_id": "kay-theme@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-9y3TDyJoi+TNVQSgVem8G6fBk8zu6FzujFHg4QsdJ9ydRM5DayqTKM/8fyPBJ068rY9TlRz2DF8vwhLPfU30nA==",
+  "_location": "/kay-theme",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball",
+    "rawSpec": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball",
+    "saveSpec": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball",
+    "fetchSpec": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball",
+  "_shasum": "c914599905216fda5ecb9e45cd8ba2d5a96eefc8",
+  "_spec": "https://api.pulsar-edit.dev/api/packages/kay-theme/versions/1.1.0/tarball",
+  "_where": "/private/var/folders/31/j55r88m95259tt1ptjry0mxc0000gn/T/apm-install-dir-2024721-19431-1vswhh.6ev8o",
+  "bugs": {
+    "url": "https://github.com/kube/atom-kay-theme/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A theme inspired by My BlueBerry Nights Movie",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/kube/atom-kay-theme#readme",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "license": "MIT",
+  "name": "kay-theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kube/atom-kay-theme.git"
+  },
+  "theme": "syntax",
+  "version": "1.1.0"
+}

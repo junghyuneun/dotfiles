@@ -1,0 +1,1 @@
+{"scopeName":"text.hyperlink","type":"modern-tree-sitter","parser":"tree-sitter-hyperlink","injectionRegex":"hyperlink","treeSitter":{"parserSource":"github:savetheclocktower/tree-sitter-hyperlink#04c3a667ba432236578ac99bbacd0412f88d6fac","grammar":"ts/tree-sitter-hyperlink.wasm","highlightsQuery":"ts/highlights.scm"}}

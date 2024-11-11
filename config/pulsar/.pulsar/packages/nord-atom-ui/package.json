@@ -1,0 +1,70 @@
+{
+  "_from": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball",
+  "_id": "nord-atom-ui@0.12.0",
+  "_inBundle": false,
+  "_integrity": "sha512-vKZlnRr/XdUrRfh4DdhKl9mWCamb+J2Lek4tN9kBYyFKqaAvrd+fyzgABs4CO4+scbGhs0QjiBnlVeyoSuXP+Q==",
+  "_location": "/nord-atom-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball",
+    "rawSpec": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball",
+    "saveSpec": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball",
+    "fetchSpec": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball",
+  "_shasum": "e1ce8b4f57193b02fa5a4ac56c77c7edf9206226",
+  "_spec": "https://api.pulsar-edit.dev/api/packages/nord-atom-ui/versions/0.12.0/tarball",
+  "_where": "/private/var/folders/31/j55r88m95259tt1ptjry0mxc0000gn/T/apm-install-dir-2024721-19575-1kftzq5.p6yyk",
+  "author": {
+    "name": "Arctic Ice Studio",
+    "email": "development@arcticicestudio.com",
+    "url": "https://www.arcticicestudio.com"
+  },
+  "bugs": {
+    "url": "https://github.com/arcticicestudio/nord-atom-ui/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "darkerFormFocusEffect": {
+      "title": "Darker Form-Focusing Effect",
+      "description": "Use darker colors for focused forms instead of the snow-inspired light effect.",
+      "type": "boolean",
+      "default": false
+    },
+    "tabSizing": {
+      "title": "Full-Width Tab Sizing",
+      "description": "In full width mode, tabs will fill the whole tab bar.",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "deprecated": false,
+  "description": "An arctic, north-bluish clean and elegant minimal Atom UI theme.",
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://www.nordtheme.com/ports/atom-ui",
+  "keywords": [
+    "arctic",
+    "north",
+    "bluish",
+    "clean",
+    "elegant",
+    "minimal",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "nord-atom-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcticicestudio/nord-atom-ui.git"
+  },
+  "theme": "ui",
+  "version": "0.12.0"
+}

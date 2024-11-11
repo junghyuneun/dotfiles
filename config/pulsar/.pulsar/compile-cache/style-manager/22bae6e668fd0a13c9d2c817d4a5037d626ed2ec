@@ -1,0 +1,1 @@
+{"source":":root {\n  --added: hsl(140, 44%, 62%);\n  --ignored: hsla(220, 13%, 66%, 0.6);\n  --modified: hsl(36, 60%, 72%);\n  --muted: hsl(220, 13%, 66%);\n}\n"}
