@@ -125,6 +125,7 @@ fu! CleanExtraSpaces()
 endfun
 
 " airline
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -134,10 +135,15 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16color'
+" lsp
 let g:airline#extensions#lsp#enabled = 1
 let g:airline#extensions#lsp#error_symbol = 'E:'
 let g:airline#extensions#lsp#warning_symbol = 'W:'
 let g:airline#extensions#lsp#show_line_numbers = 1
+let g:airline#extensions#lsp#open_lnum_symbol = '(L'
+let g:airline#extensions#lsp#close_lnum_symbol = ')'
+let g:airline#extensions#lsp#progress_skip_time = 0.3
+" others
 let g:airline#extensions#searchcount#enabled = 1
 let g:airline#extensions#searchcount#show_search_term = 1
 let g:airline#extensions#whitespace#enabled = 1
@@ -204,7 +210,6 @@ autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | e
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
-" LSP
 let g:easycomplete_cursor_word_hl = 1
 let g:easycomplete_nerd_font = 1
 let g:easycomplete_lsp_type_font = 'Meslo LG L DZ'
@@ -222,4 +227,3 @@ noremap el :EasyCompleteLint<CR>
 
 let g:easycomplete_diagnostics_next = '<C-n>'
 let g:easycomplete_diagnostics_prev = '<C-p>'
-
