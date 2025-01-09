@@ -8,7 +8,6 @@ set termguicolors
 set autochdir
 set langmenu=en
 set encoding=utf-8
-set fileencoding=utf-8
 set ffs=unix,dos,mac
 set nobackup
 set nowb
@@ -96,6 +95,16 @@ inoremap { {<CR><BS>}<Esc>O
 inoremap \{ {
 
 " tabs mapping
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>0 <Plug>AirlineSelectTab0
 map <leader>ts :tabs<cr>
 map <leader>=  :tabnew<cr>
 map <leader>-  :tabclose<cr>
@@ -120,8 +129,26 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16color'
+let g:airline#extensions#lsp#enabled = 1
+let g:airline#extensions#lsp#error_symbol = 'E:'
+let g:airline#extensions#lsp#warning_symbol = 'W:'
+let g:airline#extensions#lsp#show_line_numbers = 1
+let g:airline#extensions#searchcount#enabled = 1
+let g:airline#extensions#searchcount#show_search_term = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#whitespace#symbol = '.'
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file', 'conflicts' ]
+let g:airline#extensions#whitespace#trailing_format = 'trailing[%s]'
+let g:airline#extensions#whitespace#mixed_indent_format = 'mixed-indent[%s]'
+let g:airline#extensions#whitespace#long_format = 'long[%s]'
+let g:airline#extensions#whitespace#mixed_indent_file_format = 'mix-indent-file[%s]'
+let g:airline#extensions#whitespace#conflicts_format = 'conflicts[%s]'
+let g:airline#extensions#wordcount#enabled = 1
 
 set tabline=%!TabLine()
 
