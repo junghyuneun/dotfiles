@@ -1,5 +1,5 @@
 function wiz
-  argparse -x on,off on off c/color=? b/brightness=? s/speed=? -- $argv
+  argparse -x on,off u/on d/off c/color=? b/brightness=? s/speed=? -- $argv
   or return
 
   set -f MODES {"Ocean", "Romance", "Sunset", "Party", "Fireplace", "Cozy", "Forest", "Pastel colors", "Wake-up", "Bedtime", "Warm white", "Daylight", "Cool white", "Night light", "Focus", "Relax", "True colors", "TV time", "Plant growth", "Spring", "Summer", "Fall", "Deep dive", "Jungle", "Mojito", "Club", "Christmas", "Halloween", "Candlelight", "Golden white", "Pulse", "Steampunk", "Diwali", "White", "Alarm", "Rhythm"}
@@ -13,12 +13,12 @@ function wiz
       set -f matched 0
       for i in (seq (count $MODES))
         if string match -i "*$_flag_c*" $MODES[$i] >/dev/null
-          set -f matched 1
+          set matched 1
           break
         end
       end
       if test $matched -eq 0
-        set -f i 13
+        set i 13
       end
       set -f COLOR_PARAM "\"sceneId\":$i"
     end
@@ -34,4 +34,5 @@ function wiz
   echo $PAYLOAD
   echo -n $PAYLOAD | nc -u -w 1 $WIZ 38899 >/dev/null
 end
+
 

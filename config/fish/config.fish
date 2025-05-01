@@ -23,11 +23,19 @@ if status is-interactive
 
   set -l doc '~/Documents/'
   set -l dw '~/Downloads/'
-  abbr --add dc --regex '^dc$' --set-cursor $doc"%"
+  abbr --add doc --regex '^doc$' --set-cursor $doc"%"
   abbr --add dw --regex '^dw$' --set-cursor $dw"%"
 
-  starship init fish | source
+  oh-my-posh init fish --config ~/.local/share/oh-my-posh/themes/devious-diamonds.omp.yaml | source
   test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+  set -l NODE_MODULES_PATH /usr/local/lib/node_modules
+  if test ! -L $NODE_MODULES_PATH -o ! -e $NODE_MODULES_PATH
+    if test -s $NODE_MODULES_PATH
+      rm $NODE_MODULES_PATH
+    end
+    ln -s $FNM_MULTISHELL_MODULES_PATH/lib/node_modules/ /usr/local/lib/
+  end
 
 end
 
