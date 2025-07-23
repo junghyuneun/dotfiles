@@ -35,4 +35,3 @@ function wiz
   echo -n $PAYLOAD | nc -u -w 1 $WIZ 38899 >/dev/null
 end
 
-
