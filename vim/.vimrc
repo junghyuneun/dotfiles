@@ -4,6 +4,7 @@ let $LANG='en'
 syntax enable
 filetype plugin indent on
 
+colorscheme neuromancer
 set termguicolors
 set autochdir
 set langmenu=en
@@ -18,13 +19,12 @@ set number
 set numberwidth=5
 set nocompatible
 set path+=**
-colorscheme dusklight
 command W w !sudo tee % > /dev/null
 
 if has('persistent_undo')
   let target_path = expand('~/.vim/undo')
   if !isdirectory(target_path)
-      call system('mkdir -p ' . target_path)
+    call system('mkdir -p ' . target_path)
   endif
   let &undodir = target_path
   set undofile
@@ -39,8 +39,10 @@ set history=500
 set backspace=eol,start,indent
 set ambw="double"
 set whichwrap+=b,s,h,l,<,>,~,[,]
-set listchars=tab:>-,trail:.,precedes:<,extends:>,eol:$
+set list
+set listchars=tab:>-,trail:\\u00B7,precedes:<,extends:>,multispace:\\u00B7,lead:\\u00B7
 set wildmode=list:longest,list:full
+set completeopt+=noselect
 
 set ignorecase
 set smartcase
@@ -74,7 +76,7 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " mappings
-map 8 <Home>
+map <C-0> <Home>
 map 9 ^
 map 0 $
 nmap <leader>w :w!<cr>
@@ -87,13 +89,23 @@ nnoremap <S-Right> <C-w><
 nnoremap <S-Left> <C-w>>
 nnoremap <S-Up> <C-w>+
 nnoremap <S-Down> <C-w>-
-inoremap jj <Esc>
 nnoremap / /\v
+nnoremap <C-;> gg=G
 cnoremap %s/ %s/\v
 " auto close brackets
-inoremap { {<CR><BS>}<Esc>O
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
 inoremap \{ {
-
+inoremap jj <Esc>
+inoremap <C-m> <Plug>EasycompleteClosePum
+vnoremap <C-c> "*y
+nnoremap d "dd
+nnoremap D "dD
+nnoremap dd "ddd
+nnoremap x "_x
+nnoremap <leader>p "dp
+nnoremap <leader>P "dP
 " tabs mapping
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
@@ -105,16 +117,19 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>0 <Plug>AirlineSelectTab0
-map <leader>ts :tabs<cr>
-map <leader>=  :tabnew<cr>
-map <leader>-  :tabclose<cr>
-map <leader>l  :tabn<cr>
-map <leader>h  :tabp<cr>
-map <leader>+ <C-W>T
-map <expr><leader>m printf(":\<C-u>%dtabm\n", v:count1)
-let g:lasttab=1
-nmap <leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab=tabpagenr()
+map <leader>b :ls<cr>
+map <leader>bb :ls!<cr>
+map <expr><leader>c printf(":\<C-u>%dbw\n", v:count)
+map <leader>t :tabs<cr>
+map <leader>= :tabnew<cr>
+map <leader>- :tabclose<cr>
+map <leader>l :tabn<cr>
+map <leader>h :tabp<cr>
+map <expr><leader>m printf(":\<C-u>%dtabm\n", (tabpagenr() > v:count) ? v:count - 1 : v:count)
+map <Tab> <C-w><C-w>
+let g:lasttab = 1
+nmap <leader>e :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 fu! CleanExtraSpaces()
   let save_cursor = getpos(".")
@@ -125,6 +140,29 @@ fu! CleanExtraSpaces()
 endfun
 
 " airline
+let g:airline_mode_map = {
+      \ '__'     : '-',
+      \ 'c'      : 'C',
+      \ 'i'      : 'I',
+      \ 'ic'     : 'I',
+      \ 'ix'     : 'I',
+      \ 'n'      : 'N',
+      \ 'multi'  : 'M',
+      \ 'ni'     : 'N',
+      \ 'no'     : 'N',
+      \ 'R'      : 'R',
+      \ 'Rv'     : 'R',
+      \ 's'      : 'S',
+      \ 'S'      : 'S',
+      \ ''     : 'S',
+      \ 't'      : 'T',
+      \ 'v'      : 'V',
+      \ 'V'      : 'V',
+      \ }
+let g:airline_stl_path_style = 'short'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+let g:airline_detect_modified = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -133,8 +171,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='base16color'
 " lsp
 let g:airline#extensions#lsp#enabled = 1
 let g:airline#extensions#lsp#error_symbol = 'E:'
@@ -147,13 +183,6 @@ let g:airline#extensions#lsp#progress_skip_time = 0.3
 let g:airline#extensions#searchcount#enabled = 1
 let g:airline#extensions#searchcount#show_search_term = 1
 let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#whitespace#symbol = '.'
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file', 'conflicts' ]
-let g:airline#extensions#whitespace#trailing_format = 'trailing[%s]'
-let g:airline#extensions#whitespace#mixed_indent_format = 'mixed-indent[%s]'
-let g:airline#extensions#whitespace#long_format = 'long[%s]'
-let g:airline#extensions#whitespace#mixed_indent_file_format = 'mix-indent-file[%s]'
-let g:airline#extensions#whitespace#conflicts_format = 'conflicts[%s]'
 let g:airline#extensions#wordcount#enabled = 1
 
 set tabline=%!TabLine()
@@ -167,9 +196,9 @@ function TabLine()
       let s ..= '%#TabLine#'
     endif
 
-    let s ..= '%' .. (i + 1) .. 'T'
+    let s ..= '%' .. (i+1) .. 'T'
 
-    let s ..= ' %{TabLabel(' .. (i + 1) .. ')} '
+    let s ..= ' %{TabLabel(' .. (i+1) .. ')} '
   endfor
 
   let s ..= '%#TabLineFill#%T'
@@ -200,7 +229,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+      \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
@@ -210,9 +239,26 @@ autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | e
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+" Easycomplete
+let g:easycomplete_diagnostics_enable = 1
+let g:easycomplete_signature_enable = 1
+let g:easycomplete_enable = 1
 let g:easycomplete_cursor_word_hl = 1
 let g:easycomplete_nerd_font = 1
 let g:easycomplete_lsp_type_font = 'Meslo LG L DZ'
+let g:easycomplete_pum_format = ["kind", "abbr", "menu"]
+let g:easycomplete_cmdline = 1
+let g:easycomplete_winborder = 1
+let g:easycomplete_ghost_text = 1
+let g:easycomplete_pum_noselect = 1
+let g:easycomplete_pum_pretty_style = 1
+set updatetime=150
+hi FloatBorder     guifg=green
+hi PmenuKind       guifg=LightSteelBlue   guibg=#2c2c3e
+hi Pmenu           guifg=Lavender         guibg=#2c2c3e
+hi PmenuExtra      guifg=SlateGray        guibg=#2c2c3e
+hi PmenuSel        guifg=white            guibg=#3a3a4c
+hi EasyFuzzyMatch  guifg=#75adf3
 
 " GoTo code navigation
 noremap gr :EasyCompleteReference<CR>
@@ -227,3 +273,5 @@ noremap el :EasyCompleteLint<CR>
 
 let g:easycomplete_diagnostics_next = '<C-n>'
 let g:easycomplete_diagnostics_prev = '<C-p>'
+
+

@@ -10,12 +10,13 @@
     {
       "alignment": "left",
       "type": "prompt",
+      "leading_diamond": "\u250f",
+      "trailing_diamond": "\ue0b4",
       "segments": [
         {
           "foreground": "#faf5cf",
           "background": "#e8d15d",
           "style": "diamond",
-          "leading_diamond": "\u250f",
           "template": "{{ if .WSL }}WSL at {{ end }} {{.Icon}} ",
           "type": "os"
         },
@@ -51,7 +52,6 @@
         {
           "background": "#281b84",
           "foreground": "#ccfafc",
-          "trailing_diamond": "\ue0b4",
           "properties": {
             "time_format": "<#fbd7fc>\ue641 15:04:05</> <#ef87f8>|</> \uf073 2 Jan, Mon"
           },
@@ -65,17 +65,12 @@
       "alignment": "left",
       "newline": true,
       "type": "prompt",
+      "leading_diamond": "\u2523",
+      "overflow": "break",
       "segments": [
-        {
-          "style": "plain",
-          "foreground": "#dafbe1",
-          "template": "\u2523",
-          "type": "text"
-        },
         {
           "background": "#dafbe1",
           "foreground": "#0969da",
-          "_leading_diamond": "\ue0b6",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -93,7 +88,8 @@
             "folder_separator_icon": "/",
             "home_icon": "\ueb06 ~",
             "style": "agnoster_short",
-            "max_depth": 3
+            "max_depth": 3,
+            "display_root": true
           },
           "template": " {{ .Path }} ",
           "type": "path",

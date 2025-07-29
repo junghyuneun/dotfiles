@@ -18,6 +18,15 @@ if status is-interactive
   abbr --add dw --regex '^dw$' --set-cursor $dw"%"
 
   oh-my-posh init fish --config $XDG_CONFIG_HOME/oh-my-posh/config.omp.json | source
-  test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+  set -l fp "$HOME/.iterm2_shell_integration.fish"
+  test -e $fp; and source $fp
+  clean_fnm
 end
 
+
+# pnpm
+set -gx PNPM_HOME "/Users/jasoneun/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
