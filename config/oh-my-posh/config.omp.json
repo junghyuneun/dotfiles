@@ -66,6 +66,7 @@
       "newline": true,
       "type": "prompt",
       "leading_diamond": "\u2523",
+      "trailing_diamond": "\ue0b4",
       "overflow": "break",
       "segments": [
         {
@@ -93,8 +94,7 @@
           },
           "template": " {{ .Path }} ",
           "type": "path",
-          "style": "diamond",
-          "trailing_diamond": "\ue0b4"
+          "style": "diamond"
         }
       ]
     },
@@ -102,20 +102,14 @@
       "alignment": "left",
       "newline": true,
       "type": "prompt",
+      "leading_diamond": "\u2514",
+      "trailing_diamond": "<#ffa5d8>\u276f </>",
       "segments": [
         {
           "style": "diamond",
           "foreground": "#ffa5d8",
-          "background": "#0a52b0",
-          "leading_diamond": "\u2514",
           "type": "session",
-          "template": "{{ if .Root }} ˗ˏˋˎˊ˗ {{ else }}    󰻳  {{ end }}"
-        },
-        {
-          "style": "plain",
-          "foreground": "#ffa5d8",
-          "template": "\u276f ",
-          "type": "text"
+          "template": "<,#0a52b0>{{ if .Root }} ˗ˏˋˎˊ˗ {{ else }}    󰻳  {{ end }}</>"
         }
       ]
     }
