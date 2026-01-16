@@ -81,6 +81,8 @@ map 9 ^
 map 0 $
 nmap <leader>w :w!<cr>
 nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+nnoremap <C-.> :cnext<CR>
+nnoremap <C-,> :cprev<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -89,6 +91,7 @@ nnoremap <S-Right> <C-w><
 nnoremap <S-Left> <C-w>>
 nnoremap <S-Up> <C-w>+
 nnoremap <S-Down> <C-w>-
+nnoremap <S-t> :LastWindow<CR>
 nnoremap / /\v
 nnoremap <C-;> gg=G
 cnoremap %s/ %s/\v
@@ -106,6 +109,7 @@ nnoremap dd "ddd
 nnoremap x "_x
 nnoremap <leader>p "dp
 nnoremap <leader>P "dP
+nnoremap <leader>q :bd<CR>
 " tabs mapping
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
@@ -122,6 +126,7 @@ map <leader>bb :ls!<cr>
 map <expr><leader>c printf(":\<C-u>%dbw\n", v:count)
 map <leader>t :tabs<cr>
 map <leader>= :tabnew<cr>
+map <leader>+ :tabnew<Space>
 map <leader>- :tabclose<cr>
 map <leader>l :tabn<cr>
 map <leader>h :tabp<cr>
@@ -154,7 +159,7 @@ let g:airline_mode_map = {
       \ 'Rv'     : 'R',
       \ 's'      : 'S',
       \ 'S'      : 'S',
-      \ ''     : 'S',
+      \ ''       : 'S',
       \ 't'      : 'T',
       \ 'v'      : 'V',
       \ 'V'      : 'V',
@@ -218,6 +223,7 @@ endfunction
 " NerdTree
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-m> :NERDTreeFind<CR>
+nnoremap <leader>r :NERDTreeRefreshRoot<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeDirArrows = 1
@@ -274,4 +280,14 @@ noremap el :EasyCompleteLint<CR>
 let g:easycomplete_diagnostics_next = '<C-n>'
 let g:easycomplete_diagnostics_prev = '<C-p>'
 
+augroup bufclosetrack
+  au!
+  autocmd BufLeave * let g:lastBufNr = bufnr('%')
+augroup END
+function! LastWindow()
+  if exists("g:lastBufNr") && empty(win_findbuf(g:lastBufNr))
+    exe "sb " . bufname(g:lastBufNr)
+  endif
+endfunction
+command -nargs=0 LastWindow call LastWindow()
 
