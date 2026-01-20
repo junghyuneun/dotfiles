@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -31,6 +31,12 @@ For the _Ubuntu Condensed_ font Nerd Fonts corrected the `OS/2` `usWidthClass` t
 Condensed (3) by direct patching.
 
 The script used is in the `Condensed/` directory.
+
+## Terminal usage
+
+This font is not monospaced! The letter width differs and that will
+probably look strange in a terminal where each letter has to fit
+in the same 'cell'.
 
 ## Which font?
 

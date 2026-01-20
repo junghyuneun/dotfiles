@@ -106,6 +106,24 @@
       "trailing_diamond": "<#ffa5d8>\u276f </>",
       "segments": [
         {
+          "background": "#303030",
+          "foreground": "#3C873A",
+          "options": {
+            "fetch_package_manager": true
+          },
+          "style": "diamond",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "background": "#306998",
+          "foreground": "#FFE873",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
           "style": "diamond",
           "foreground": "#ffa5d8",
           "type": "session",

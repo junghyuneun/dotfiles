@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -14,7 +14,7 @@ For more information have a look at the upstream website:
 * https://github.com/canonical/Ubuntu-Sans-fonts
 * https://github.com/canonical/Ubuntu-Sans-Mono-fonts
 
-Version: v1.004
+Version: v1.006
 
 ## Which font?
 

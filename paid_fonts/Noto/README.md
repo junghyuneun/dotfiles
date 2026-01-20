@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -16,9 +16,9 @@ The **Noto Mono** is an ancient font, nowadays the equivalent is Noto Sans Mono.
 
 Some `ldot` and/or `fi`/`fl` ligatures are removed because they map to only one advance width.
 
-Version: 2.013 (2022) for Noto Serif
-Version: 2.013 (2022) for Noto Sans
-Version: 2.014 (2022) for Noto Sans Mono
+Version: 2.015 for Noto Serif
+Version: 2.015 for Noto Sans
+Version: 2.014 for Noto Sans Mono
 Version: 1.0 (2007) for Noto Mono
 
 ## Which font?

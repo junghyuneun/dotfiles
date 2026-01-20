@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -18,7 +18,7 @@ Greek.
 
 For more information have a look at the upstream website: https://github.com/DeLaGuardo/Inconsolata-LGC
 
-Version: 1.5.2
+Version: 1.13
 
 ## Which font?
 

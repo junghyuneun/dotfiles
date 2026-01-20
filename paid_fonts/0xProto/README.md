@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -8,11 +8,11 @@ For more information see:
 
 # 0xProto
 
-An opinionated font for software engineers.
+A programming font focused on source code legibility.
 
 For more information have a look at the upstream website: https://github.com/0xType/0xProto
 
-Version: 1.603
+Version: 2.300
 
 ## Which font?
 

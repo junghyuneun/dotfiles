@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -15,6 +15,12 @@ For more information have a look at the upstream website: https://github.com/blo
 https://fonts.google.com/specimen/Tinos
 
 Version: 1.23
+
+## Terminal usage
+
+This font is not monospaced! The letter width differs and that will
+probably look strange in a terminal where each letter has to fit
+in the same 'cell'.
 
 ## Which font?
 

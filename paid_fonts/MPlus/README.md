@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+This is an archived font from the Nerd Fonts release v3.4.0.
 
 For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
@@ -10,9 +10,9 @@ For more information see:
 
 **M+ fonts** a little nifty font family for everyday use
 
-For more information have a look at the upstream website: https://github.com/coz-m/MPLUS_FONTS
+For more information have a look at the upstream website: https://github.com/coz-m/MPLUS\_FONTS
 
-Version: 1.001 / 1.005 (M+code\_latin) / 1.006 (M+1\_code) (as of September 2023)
+Version: 1.007
 
 ## Which font?
 
