@@ -1,10 +1,10 @@
 {
-  "Foreground Color (Dark)" : {
-    "Red Component" : 0.85952866077423096,
+  "Ansi 12 Color (Light)" : {
+    "Red Component" : 0.25098040699958801,
     "Color Space" : "Calibrated",
-    "Blue Component" : 0.72719365358352661,
+    "Blue Component" : 0.81176471710205078,
     "Alpha Component" : 1,
-    "Green Component" : 0.81881159543991089
+    "Green Component" : 0.64313727617263794
   },
   "HotKey Modifier Flags" : 1048576,
   "Ansi 15 Color (Dark)" : {
@@ -22,7 +22,13 @@
     "Green Component" : 0.0096160909160971642
   },
   "Close Sessions On End" : 1,
-  "Non-ASCII Anti Aliased" : true,
+  "Foreground Color (Dark)" : {
+    "Red Component" : 0.85952866077423096,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.72719365358352661,
+    "Alpha Component" : 1,
+    "Green Component" : 0.81881159543991089
+  },
   "Session Close Undo Timeout" : 10,
   "Cursor Text Color" : {
     "Red Component" : 0,
@@ -33,7 +39,7 @@
   },
   "Smart Cursor Color" : true,
   "Prompt Before Closing 2" : false,
-  "Unicode Normalization" : 2,
+  "Unicode Normalization" : 3,
   "Ansi 3 Color (Dark)" : {
     "Red Component" : 0.80392158031463623,
     "Color Space" : "Calibrated",
@@ -150,6 +156,9 @@
         "class" : "iTermStatusBarGitComponent",
         "configuration" : {
           "knobs" : {
+            "minwidth" : 0,
+            "iTermStatusBarGitComponentPollingIntervalKey" : 2,
+            "base: compression resistance" : 1,
             "shared text color" : {
               "Red Component" : 0.68831443786621094,
               "Color Space" : "P3",
@@ -157,10 +166,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.89269918203353882
             },
-            "iTermStatusBarGitComponentPollingIntervalKey" : 2,
             "base: priority" : 5,
-            "minwidth" : 0,
-            "base: compression resistance" : 1,
             "maxwidth" : 1.7976931348623157e+308
           },
           "layout advanced configuration dictionary value" : {
@@ -176,7 +182,9 @@
         "configuration" : {
           "knobs" : {
             "path" : "path",
+            "base: priority" : 5,
             "base: compression resistance" : 1,
+            "minwidth" : 0,
             "shared text color" : {
               "Red Component" : 0.68605834245681763,
               "Color Space" : "P3",
@@ -184,8 +192,6 @@
               "Alpha Component" : 1,
               "Green Component" : 0.88390237092971802
             },
-            "base: priority" : 5,
-            "minwidth" : 0,
             "maxwidth" : 1.7976931348623157e+308
           },
           "layout advanced configuration dictionary value" : {
@@ -222,8 +228,6 @@
         "configuration" : {
           "knobs" : {
             "shared font" : "",
-            "minwidth" : 0,
-            "base: priority" : 5,
             "shared text color" : {
               "Red Component" : 0.68538665771484375,
               "Color Space" : "P3",
@@ -231,6 +235,8 @@
               "Alpha Component" : 1,
               "Green Component" : 0.63235300779342651
             },
+            "base: priority" : 5,
+            "minwidth" : 0,
             "base: compression resistance" : 1,
             "maxwidth" : 1.7976931348623157e+308
           },
@@ -659,7 +665,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.80784313725490198
   },
-  "Normal Font" : "RecMonoSmCasualNFM-Bold 24",
+  "Normal Font" : "RedditMono-SemiBold 26 {\"featureSettings\":[{\"CTFeatureSelectorIdentifier\":6,\"CTFeatureTypeIdentifier\":35},{\"CTFeatureSelectorIdentifier\":2,\"CTFeatureTypeIdentifier\":35},{\"CTFeatureSelectorIdentifier\":4,\"CTFeatureTypeIdentifier\":35}]}",
   "Use Selected Text Color (Dark)" : true,
   "Has Hotkey" : true,
   "Foreground Color" : {
@@ -705,11 +711,10 @@
   "Icon" : 1,
   "Brighten Bold Text" : true,
   "HotKey Window Animates" : true,
-  "Background Image Location" : "",
   "Allow Title Setting" : false,
+  "Width Percentage" : 100,
   "ASCII Anti Aliased" : true,
   "Use Tab Color (Dark)" : false,
-  "Width Percentage" : 100,
   "Cursor Guide Color (Dark)" : {
     "Red Component" : 0.20784313725490197,
     "Color Space" : "Calibrated",
@@ -719,7 +724,7 @@
   },
   "Flashing Bell" : false,
   "Brighten Bold Text (Light)" : true,
-  "Non Ascii Font" : "AnonymiceProNF 24",
+  "Non Ascii Font" : "ZedMonoNFP 26",
   "Ansi 7 Color (Dark)" : {
     "Red Component" : 0.9529411792755127,
     "Color Space" : "Calibrated",
@@ -822,11 +827,11 @@
     "Green Component" : 0.90588235855102539
   },
   "Keyboard Map" : {
-    "0xf703-0x280000" : {
+    "0xf728-0x0" : {
       "Version" : 2,
       "Apply Mode" : 0,
-      "Action" : 10,
-      "Text" : "f",
+      "Action" : 11,
+      "Text" : "0x4",
       "Escaping" : 1
     },
     "0x7f-0x100000" : {
@@ -850,18 +855,18 @@
       "Text" : "b",
       "Escaping" : 1
     },
-    "0xf728-0x0" : {
-      "Version" : 2,
-      "Apply Mode" : 0,
-      "Action" : 11,
-      "Text" : "0x4",
-      "Escaping" : 1
-    },
     "0x7f-0x80000" : {
       "Version" : 2,
       "Apply Mode" : 0,
       "Action" : 11,
       "Text" : "0x1b 0x7f",
+      "Escaping" : 1
+    },
+    "0xf703-0x280000" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 10,
+      "Text" : "f",
       "Escaping" : 1
     }
   },
@@ -1015,13 +1020,7 @@
     "Alpha Component" : 1,
     "Green Component" : 1
   },
-  "Ansi 12 Color (Light)" : {
-    "Red Component" : 0.25098040699958801,
-    "Color Space" : "Calibrated",
-    "Blue Component" : 0.81176471710205078,
-    "Alpha Component" : 1,
-    "Green Component" : 0.64313727617263794
-  },
+  "Non-ASCII Anti Aliased" : true,
   "Show Timestamps" : 2,
   "Badge Max Width" : 0.5
 }
