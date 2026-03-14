@@ -41,7 +41,7 @@
           "foreground": "#000000",
           "background": "#ecb744",
           "template": " {{ .IP }} ",
-          "properties": {
+          "options": {
             "http_timeout": 1000
           },
           "cache": {
@@ -52,7 +52,7 @@
         {
           "background": "#281b84",
           "foreground": "#ccfafc",
-          "properties": {
+          "options": {
             "time_format": "<#fbd7fc>\ue641 15:04:05</> <#ef87f8>|</> \uf073 2 Jan, Mon"
           },
           "style": "diamond",
@@ -72,7 +72,7 @@
         {
           "background": "#dafbe1",
           "foreground": "#0969da",
-          "properties": {
+          "options": {
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
@@ -84,7 +84,7 @@
         {
           "background": "#5c6578",
           "foreground": "#9fe0b3",
-          "properties": {
+          "options": {
             "folder_icon": " \uf07c ",
             "folder_separator_icon": "/",
             "home_icon": "\ueb06 ~",
@@ -103,7 +103,7 @@
       "newline": true,
       "type": "prompt",
       "leading_diamond": "\u2514",
-      "trailing_diamond": "<#ffa5d8>\u276f </>",
+      "trailing_diamond": "\ue0b0",
       "segments": [
         {
           "background": "#303030",
@@ -125,9 +125,10 @@
         },
         {
           "style": "diamond",
+          "background": "#0a52b0",
           "foreground": "#ffa5d8",
           "type": "session",
-          "template": "<,#0a52b0>{{ if .Root }} ˗ˏˋˎˊ˗ {{ else }}    󰻳  {{ end }}</>"
+          "template": "{{ if .Root }} 󰐤 󰐣 󱅿 {{ else }}   󰻳 {{ end }}"
         }
       ]
     }
