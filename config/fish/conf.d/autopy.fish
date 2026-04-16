@@ -52,11 +52,22 @@ function _autopy_get_project_dir
   set dir (pwd)
   if _autopy_is_poetry_project $dir
     echo $dir
+  else if _autopy_has_venv $dir
+    echo $dir
   else if _autopy_is_git_repo
     command git rev-parse --show-toplevel
   else
     echo $dir
   end
+end
+
+function _autopy_has_venv -a dir
+  for name in env .env venv .venv
+    if test -e "$dir/$name/bin/activate.fish"
+      return 0
+    end
+  end
+  return 1
 end
 
 function _autopy_get_venv_dir -a project_dir

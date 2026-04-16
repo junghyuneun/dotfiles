@@ -1,7 +1,8 @@
 function la
-  eza --oneline --all --classify=always --color=always --icons=always --no-quotes \
-    --color-scale=all --color-scale-mode=gradient --group-directories-first \
-    --time-style='+%y/%b %d %H:%M' \
-    --long --binary --smart-group --header --created --modified --accessed --mounts \
-    --git --git-repos $argv
+  eza --oneline --all --group-directories-first --no-quotes \
+  --classify=always --color=always --icons=always --color-scale=all --color-scale-mode=gradient \
+  --header --mounts --long --binary --smart-group \
+  --git --git-repos $argv \
+  --time-style='+%y/%b%d %H:%M' --created --accessed \
+  --width=$(tput cols)
 end
