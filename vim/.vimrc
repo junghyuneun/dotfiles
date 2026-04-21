@@ -4,7 +4,7 @@ let $LANG='en'
 syntax enable
 filetype plugin indent on
 
-colorscheme neuromancer
+colorscheme vague
 set termguicolors
 set autochdir
 set langmenu=en
@@ -280,6 +280,12 @@ noremap el :EasyCompleteLint<CR>
 
 let g:easycomplete_diagnostics_next = '<C-n>'
 let g:easycomplete_diagnostics_prev = '<C-p>'
+
+let g:easycomplete_filetypes = {
+  \  "fish": {
+  \    "whitelist": ["fish"]
+  \  }
+  \}
 
 augroup bufclosetrack
   au!
