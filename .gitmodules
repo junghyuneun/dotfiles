@@ -1,0 +1,24 @@
+[submodule "vim/pack/vendor/start/nerdtree"]
+	path = vim/pack/vendor/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "vim/pack/vendor/start/unicode.vim"]
+	path = vim/pack/vendor/start/unicode.vim
+	url = https://github.com/chrisbra/unicode.vim.git
+[submodule "vim/pack/vendor/start/vim-airline"]
+	path = vim/pack/vendor/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/pack/vendor/start/vim-airline-themes"]
+	path = vim/pack/vendor/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/pack/vendor/start/vim-better-whitespace"]
+	path = vim/pack/vendor/start/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
+[submodule "vim/pack/vendor/start/vim-css-color"]
+	path = vim/pack/vendor/start/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
+[submodule "vim/pack/vendor/start/vim-devicons"]
+	path = vim/pack/vendor/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "vim/pack/vendor/start/vim-easycomplete"]
+	path = vim/pack/vendor/start/vim-easycomplete
+	url = https://github.com/jayli/vim-easycomplete.git
