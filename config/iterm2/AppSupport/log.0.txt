@@ -1,0 +1,33 @@
+646 586580-06-02 12:21:55.660 +0900
+1778895031.660079 PSMTabDragAssistant.m:912 (-[PSMTabDragAssistant distributePlaceholdersInTabBar:]): distributePlaceholdersInTabBar draggedCell=(null)
+1778895033.019073 PSMTabDragAssistant.m:653 (-[PSMTabDragAssistant finishDrag]): Drag of 0x0 finished from
+(
+	0   iTerm2                              0x0000000104659aa0 -[PSMTabDragAssistant finishDrag] + 172
+	1   iTerm2                              0x0000000104659264 -[PSMTabDragAssistant reallyPerformDragOperation:] + 1772
+	2   iTerm2                              0x0000000104658b68 -[PSMTabDragAssistant performDragOperation:] + 28
+	3   iTerm2                              0x000000010463a41c -[PSMTabBarControl performDragOperation:] + 108
+	4   AppKit                              0x000000018f683c1c NSCoreDragReceiveMessageProc + 452
+	5   HIServices                          0x00000001925c42ac CallReceiveMessageCollectionWithMessage + 116
+	6   HIServices                          0x00000001925be078 DoMultipartDropMessage + 96
+	7   HIServices                          0x00000001925bde38 DoDropMessage + 56
+	8   HIServices                          0x00000001925bc6ac DragInApplication + 952
+	9   HIServices                          0x00000001925c5168 CoreDragStartDraggingAsync + 572
+	10  AppKit                              0x000000018fd3f2b8 -[NSCoreDragManager _dragUntilMouseUp:initialEvent:async:] + 1204
+	11  AppKit                              0x000000018fd3ed8c -[NSCoreDragManager _tryCatchDragUntilMouseUp:initialEvent:async:] + 32
+	12  AppKit                              0x000000018fd401d8 -[NSCoreDragManager dragImage:fromWindow:at:offset:event:pasteboard:source:slideBack:asynchronous:] + 1616
+	13  AppKit                              0x000000018f680ba4 -[NSWindow(NSDrag) dragImage:at:offset:event:pasteboard:source:slideBack:] + 136
+	14  iTerm2                              0x0000000104672a48 -[MovePaneController beginDrag:] + 616
+	15  iTerm2                              0x00000001049d567c -[SessionView beginDrag] + 36
+	16  iTerm2                              0x0000000104c176c0 -[SessionTitleView mouseDragged:] + 124
+	17  AppKit                              0x000000018f592f10 forwardMethod + 252
+	18  AppKit                              0x000000019014356c -[NSWindow _handleMouseDraggedEvent:] + 52
+	19  AppKit                              0x000000018f52714c -[NSWindow(NSEventRouting) _reallySendEvent:isDelayedEvent:] + 348
+	20  AppKit                              0x000000018f526e4c -[NSWindow(NSEventRouting) sendEvent:] + 380
+	21  AppKit                              0x000000018ff971f8 -[NSApplication(NSEventRouting) sendEvent:] + 1276
+	22  iTerm2                              0x00000001049562f0 -[iTermApplication sendEvent:] + 724
+	23  AppKit                              0x000000018fbe4498 -[NSApplication _handleEvent:] + 60
+	24  AppKit                              0x000000018f3f6164 -[NSApplication run] + 408
+	25  AppKit                              0x000000018f3ce7b0 NSApplicationMain + 880
+	26  iTerm2                              0x000000010462b244 main + 228
+	27  dyld                                0x000000018ab5fda4 start + 6992
+)

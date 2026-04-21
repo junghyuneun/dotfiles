@@ -38,5 +38,8 @@ end
 test -r "$HOME/.opam/opam-init/init.fish" && source "$HOME/.opam/opam-init/init.fish" > /dev/null 2> /dev/null; or true
 # END opam configuration
 
+# Shell Integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+# ngrok
+set -gx NGROK_AUTHTOKEN 7h1JAKkVvfxgmjAM8pnJ5_6doYqrgWZfYjG9R96SH9E
