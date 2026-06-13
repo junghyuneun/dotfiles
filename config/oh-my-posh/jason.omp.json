@@ -1,11 +1,7 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  // "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "shell_integration": true,
-  "iterm_features": [
-    "current_dir",
-    "prompt_mark",
-    "remote_host"
-  ],
+  "iterm_features": ["current_dir", "prompt_mark", "remote_host"],
   "blocks": [
     {
       "alignment": "left",
@@ -21,9 +17,7 @@
           "type": "os"
         },
         {
-          "background_templates": [
-            "{{ if gt .Code 0 }}#ffffff{{ end }}"
-          ],
+          "background_templates": ["{{ if gt .Code 0 }}#ffffff{{ end }}"],
           "style": "plain",
           "template": " {{ if gt .Code 0 }}<#f1184c></> {{ end }}",
           "type": "status"
