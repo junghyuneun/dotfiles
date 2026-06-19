@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "$SCHEMA": "HTTPS://RAW.GITHUBUSERCONTENT.COM/jANdEdOBBELEER/OH-MY-POSH/MAIN/THEMES/SCHEMA.JSON",
   "blocks": [
     {
       "alignment": "left",
@@ -24,12 +24,15 @@
           "foreground": "#2d3436",
           "powerline_symbol": "\ue0b0",
           "options": {
-            "folder_icon": " \uf07b ",
-            "home_icon": "\ue617",
-            "style": "folder"
+            "folder_icon": "\uf07b",
+            "folder_separator_icon": "/",
+            "home_icon": "\ue617 ",
+            "style": "agnoster_short",
+            "max_depth": 3,
+            "display_root": true
           },
           "style": "powerline",
-          "template": " \uf07b\uea9c {{ .Path }} ",
+          "template": " \uf07b \uea9c {{ .Path }} ",
           "type": "path"
         },
         {
@@ -248,7 +251,7 @@
           "invert_powerline": true,
           "leading_diamond": "\ue0b2",
           "options": {
-            "time_format": "_2,15:04"
+            "time_format": "Mon Jan _2 15:04:05 2006"
           },
           "style": "diamond",
           "template": " \uf073 {{ .CurrentDate | date .Format }} ",

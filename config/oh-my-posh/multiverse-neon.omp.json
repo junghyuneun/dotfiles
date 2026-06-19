@@ -11,9 +11,8 @@
           "options": {
             "folder_icon": " \uf07c ",
             "folder_separator_icon": "/",
-            "home_icon": "\ueb06 ~",
-            "style": "agnoster_short",
-            "max_depth": 3,
+            "home_icon": "~",
+            "style": "full",
             "display_root": true
           },
           "style": "diamond",
