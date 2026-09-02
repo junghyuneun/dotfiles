@@ -1,0 +1,40 @@
+# Iosevka Custom Sans Normal
+# Weights 400/700 widths 600/720
+# Upright/ Oblique / Italic, Default: 600
+# exports cv$$, ss## OTF
+# Liberation Mono Style Variants
+# Override both Oblique and Italic
+# Discretionary ligatures.
+
+[buildPlans.IosevkaCustom]
+family = "Iosevka Custom"
+spacing = "normal"
+serifs = "sans"
+noCvSs = false
+exportGlyphNames = false
+
+  [buildPlans.IosevkaCustom.variants]
+  inherits = "ss06"
+
+  [buildPlans.IosevkaCustom.ligations]
+  inherits = "dlig"
+
+[buildPlans.IosevkaCustom.weights.Regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.IosevkaCustom.weights.Bold]
+shape = 700
+menu = 700
+css = 700
+
+[buildPlans.IosevkaCustom.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaCustom.widths.Extended]
+shape = 720
+menu = 7
+css = "expanded"
