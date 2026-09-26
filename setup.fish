@@ -1,1 +1,1 @@
-brew install fish eza fnm vim git starship mitmproxy
+brew install fish eza fnm vim git oh-my-posh helix mitmproxy

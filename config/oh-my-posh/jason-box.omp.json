@@ -1,0 +1,200 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "shell_integration": true,
+  "iterm_features": ["current_dir", "prompt_mark", "remote_host"],
+  "palette": {
+    "frame": "darkGray",
+    "muted": "darkGray",
+    "path": "lightBlue",
+    "git": "green",
+    "git-dirty": "yellow",
+    "node": "green",
+    "python": "yellow",
+    "ok": "magenta",
+    "error": "red",
+    "warn": "yellow"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:frame",
+          "template": "╭─"
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:warn",
+          "template": "{{ if .SSHSession }} \uf489 {{ .UserName }}@{{ .HostName }}{{ end }}{{ if .Root }} <p:error>\uf0e7 root</>{{ end }}"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:path",
+          "template": " {{ .Path }} ",
+          "options": {
+            "style": "agnoster_short",
+            "max_depth": 3,
+            "folder_icon": "…",
+            "folder_separator_icon": "/",
+            "home_icon": "~",
+            "display_root": true
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:git",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-dirty{{ end }}"
+          ],
+          "template": " {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "filler": "<p:frame>─</>",
+      "overflow": "break",
+      "segments": [
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "p:node",
+          "template": " \ue718 {{ .Full }}{{ if .PackageManagerIcon }} {{ .PackageManagerIcon }}{{ end }} ",
+          "options": {
+            "fetch_package_manager": true
+          }
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:python",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ if .Venv }} <p:muted>(</>{{ .Venv }}<p:muted>)</>{{ end }}{{ end }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:frame",
+          "template": "─╮"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:frame",
+          "template": "╰─"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:ok",
+          "foreground_templates": ["{{ if gt .Code 0 }}p:error{{ end }}"],
+          "template": "❯",
+          "options": {
+            "always_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:error",
+          "template": " ✘ {{ .Code }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:warn",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "options": {
+            "threshold": 2000,
+            "style": "round"
+          }
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "p:muted",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "options": {
+            "time_format": "15:04:05"
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:frame",
+          "template": "─╯"
+        }
+      ]
+    }
+  ],
+  "tooltips_action": "prepend",
+  "tooltips": [
+    {
+      "type": "ipify",
+      "tips": ["curl", "wget", "ssh", "ping", "http", "xh"],
+      "style": "plain",
+      "foreground": "p:warn",
+      "template": " \uf0ac {{ .IP }} ",
+      "options": {
+        "http_timeout": 1000
+      },
+      "cache": {
+        "duration": "15m",
+        "strategy": "session"
+      }
+    },
+    {
+      "type": "npm",
+      "tips": ["npm", "npx"],
+      "style": "plain",
+      "foreground": "p:node",
+      "template": " \ue71e {{ .Full }} "
+    },
+    {
+      "type": "pnpm",
+      "tips": ["pnpm", "pnpx"],
+      "style": "plain",
+      "foreground": "p:node",
+      "template": " pnpm {{ .Full }} "
+    },
+    {
+      "type": "time",
+      "tips": ["cal", "date"],
+      "style": "plain",
+      "foreground": "p:muted",
+      "template": " \uf073 {{ .CurrentDate | date .Format }} ",
+      "options": {
+        "time_format": "Mon 2 Jan"
+      }
+    }
+  ],
+  "transient_prompt": {
+    "foreground": "p:muted",
+    "template": "\n{{ now | date \"15:04\" }} <p:path>{{ base .PWD }}</> <p:ok>❯</> "
+  },
+  "secondary_prompt": {
+    "foreground": "p:frame",
+    "template": "  ❯❯ "
+  }
+}

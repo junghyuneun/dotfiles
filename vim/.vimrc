@@ -1,10 +1,16 @@
 let g:mapleader=' '
 let $LANG='en'
 
+" Force the NFA regex engine: the default auto-selection (re=0) falls back to
+" the old backtracking engine for the TypeScript syntax's arrow-function
+" patterns, causing minutes-long redraws ('redrawtime' exceeded) on files with
+" top-level `await call(...)` statements. NFA parses them in milliseconds.
+set regexpengine=2
+
 syntax enable
 filetype plugin indent on
 
-colorscheme vague
+colorscheme colorful256
 set termguicolors
 set autochdir
 set langmenu=en
@@ -58,7 +64,7 @@ set t_RV=
 set mat=2
 set tm=500
 set foldcolumn=1
-" set foldmethod=indent
+set foldmethod=manual
 
 set ai
 set si
@@ -100,7 +106,6 @@ cnoremap %s/ %s/\v
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
-inoremap \{ {
 inoremap jj <Esc>
 inoremap <C-m> <Plug>EasycompleteClosePum
 vnoremap <C-c> "*y

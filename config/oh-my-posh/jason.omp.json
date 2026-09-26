@@ -1,5 +1,5 @@
 {
-  // "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "shell_integration": true,
   "iterm_features": ["current_dir", "prompt_mark", "remote_host"],
   "blocks": [
@@ -10,21 +10,21 @@
       "trailing_diamond": "\ue0b4",
       "segments": [
         {
-          "foreground": "#faf5cf",
-          "background": "#e8d15d",
+          "foreground": "black",
+          "background": "yellow",
           "style": "diamond",
           "template": "{{ if .WSL }}WSL at {{ end }} {{.Icon}} ",
           "type": "os"
         },
         {
-          "background_templates": ["{{ if gt .Code 0 }}#ffffff{{ end }}"],
+          "background_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
           "style": "plain",
-          "template": " {{ if gt .Code 0 }}<#f1184c></> {{ end }}",
+          "template": " {{ if gt .Code 0 }}<black></> {{ end }}",
           "type": "status"
         },
         {
-          "background": "#213340",
-          "foreground": "#c8e5f7",
+          "background": "black",
+          "foreground": "lightWhite",
           "style": "plain",
           "template": " {{ .UserName }} ",
           "type": "session"
@@ -32,8 +32,8 @@
         {
           "type": "ipify",
           "style": "plain",
-          "foreground": "#000000",
-          "background": "#ecb744",
+          "foreground": "black",
+          "background": "yellow",
           "template": " {{ .IP }} ",
           "options": {
             "http_timeout": 1000
@@ -44,10 +44,10 @@
           }
         },
         {
-          "background": "#281b84",
-          "foreground": "#ccfafc",
+          "background": "blue",
+          "foreground": "black",
           "options": {
-            "time_format": "<#fbd7fc>\ue641 15:04:05</> <#ef87f8>|</> \uf073 2 Jan, Mon"
+            "time_format": "\ue641 15:04:05 | \uf073 2 Jan, Mon"
           },
           "style": "diamond",
           "template": " {{ .CurrentDate | date .Format }} ",
@@ -64,20 +64,15 @@
       "overflow": "break",
       "segments": [
         {
-          "background": "#dafbe1",
-          "foreground": "#0969da",
-          "options": {
-            "fetch_stash_count": true,
-            "fetch_status": true,
-            "fetch_upstream_icon": true
-          },
+          "background": "green",
+          "foreground": "black",
           "style": "diamond",
           "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
         },
         {
-          "background": "#5c6578",
-          "foreground": "#9fe0b3",
+          "background": "darkGray",
+          "foreground": "lightWhite",
           "options": {
             "folder_icon": " \uf07c ",
             "folder_separator_icon": "/",
@@ -100,8 +95,8 @@
       "trailing_diamond": "\ue0b0",
       "segments": [
         {
-          "background": "#303030",
-          "foreground": "#3C873A",
+          "background": "black",
+          "foreground": "lightWhite",
           "options": {
             "fetch_package_manager": true
           },
@@ -110,8 +105,8 @@
           "type": "node"
         },
         {
-          "background": "#306998",
-          "foreground": "#FFE873",
+          "background": "blue",
+          "foreground": "black",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
@@ -119,8 +114,8 @@
         },
         {
           "style": "diamond",
-          "background": "#0a52b0",
-          "foreground": "#ffa5d8",
+          "background": "magenta",
+          "foreground": "black",
           "type": "session",
           "template": "{{ if .Root }} 󰐤 󰐣 󱅿 {{ else }}   󰻳 {{ end }}"
         }

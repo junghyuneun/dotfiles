@@ -1,11 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "shell_integration": true,
+  "iterm_features": ["current_dir", "prompt_mark", "remote_host"],
   "blocks": [
     {
       "alignment": "left",
       "segments": [
         {
           "foreground": "cyan",
+          "leading_powerline_symbol": "\u2009",
           "style": "powerline",
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "type": "os"
