@@ -108,6 +108,9 @@
           "background": "blue",
           "foreground": "black",
           "leading_diamond": "\ue0b6",
+          "options": {
+            "display_mode": "context"
+          },
           "style": "diamond",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
           "type": "python"

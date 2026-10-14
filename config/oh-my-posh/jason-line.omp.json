@@ -1,0 +1,237 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "shell_integration": true,
+  "iterm_features": ["current_dir", "prompt_mark", "remote_host"],
+  "palette": {
+    "on": "black",
+    "user": "magenta",
+    "root": "red",
+    "path": "darkGray",
+    "path-fg": "lightWhite",
+    "git": "green",
+    "git-dirty": "yellow",
+    "git-ahead": "lightMagenta",
+    "git-behind": "lightCyan",
+    "git-diverged": "lightRed",
+    "ok": "magenta",
+    "error": "red",
+    "slow": "darkGray",
+    "node": "green",
+    "python": "yellow",
+    "go": "cyan",
+    "rust": "lightRed",
+    "java": "lightRed",
+    "time": "blue",
+    "muted": "darkGray"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "trailing_diamond": "\ue0b4",
+      "segments": [
+        {
+          "type": "session",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b0",
+          "foreground": "p:on",
+          "background": "p:user",
+          "background_templates": ["{{ if .Root }}p:root{{ end }}"],
+          "template": " {{ if eq .Shell \"fish\" }}\uee41{{ else }}{{ .Shell }}{{ end }} {{ .UserName }}{{ if .SSHSession }}@{{ .HostName }}{{ end }}{{ if .Root }} \uf0e7{{ end }} "
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "foreground": "p:path-fg",
+          "background": "p:path",
+          "template": " \uf07c {{ .Path }} ",
+          "options": {
+            "style": "full",
+            "home_icon": "~",
+            "folder_separator_icon": "/"
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "foreground": "p:on",
+          "background": "p:git",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-dirty{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-diverged{{ end }}",
+            "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}",
+            "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
+          ],
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:ok",
+          "foreground_templates": ["{{ if gt .Code 0 }}p:error{{ end }}"],
+          "template": " ❯",
+          "options": {
+            "always_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "trailing_diamond": "\ue0b4",
+      "segments": [
+        {
+          "type": "status",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:error",
+          "template": " ✘ {{ .Code }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "lightWhite",
+          "background": "p:slow",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "options": {
+            "threshold": 2000,
+            "style": "round"
+          }
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:node",
+          "template": " \ue718 {{ .Full }}{{ if .PackageManagerIcon }} {{ .PackageManagerIcon }}{{ end }} ",
+          "options": {
+            "fetch_package_manager": true
+          }
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:python",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}{{ end }} ",
+          "options": {
+            "display_mode": "context",
+            "fetch_virtual_env": true
+          }
+        },
+        {
+          "type": "go",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:go",
+          "template": " \ue627 {{ .Full }} "
+        },
+        {
+          "type": "rust",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:rust",
+          "template": " \ue7a8 {{ .Full }} "
+        },
+        {
+          "type": "java",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:java",
+          "template": " \ue738 {{ .Full }} "
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "p:on",
+          "background": "p:time",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "options": {
+            "time_format": "15:04:05"
+          }
+        }
+      ]
+    }
+  ],
+  "tooltips_action": "prepend",
+  "tooltips": [
+    {
+      "type": "ipify",
+      "tips": ["curl", "wget", "ssh", "ping", "http", "xh"],
+      "style": "diamond",
+      "leading_diamond": "\ue0b6",
+      "trailing_diamond": "\ue0b4 ",
+      "foreground": "p:on",
+      "background": "yellow",
+      "template": " \uf0ac {{ .IP }} ",
+      "options": {
+        "http_timeout": 1000
+      },
+      "cache": {
+        "duration": "15m",
+        "strategy": "session"
+      }
+    },
+    {
+      "type": "npm",
+      "tips": ["npm", "npx"],
+      "style": "diamond",
+      "leading_diamond": "\ue0b6",
+      "trailing_diamond": "\ue0b4 ",
+      "foreground": "p:on",
+      "background": "p:node",
+      "template": " \ue71e {{ .Full }} "
+    },
+    {
+      "type": "pnpm",
+      "tips": ["pnpm", "pnpx"],
+      "style": "diamond",
+      "leading_diamond": "\ue0b6",
+      "trailing_diamond": "\ue0b4 ",
+      "foreground": "p:on",
+      "background": "p:node",
+      "template": " pnpm {{ .Full }} "
+    },
+    {
+      "type": "time",
+      "tips": ["cal", "date"],
+      "style": "diamond",
+      "leading_diamond": "\ue0b6",
+      "trailing_diamond": "\ue0b4 ",
+      "foreground": "p:on",
+      "background": "p:time",
+      "template": " \uf073 {{ .CurrentDate | date .Format }} ",
+      "options": {
+        "time_format": "Mon 2 Jan"
+      }
+    }
+  ],
+  "transient_prompt": {
+    "foreground": "p:muted",
+    "template": "\n{{ now | date \"15:04\" }} <lightBlue>{{ .PWD }}</> <p:ok>❯</> "
+  },
+  "secondary_prompt": {
+    "foreground": "p:muted",
+    "template": " ❯❯ "
+  }
+}
