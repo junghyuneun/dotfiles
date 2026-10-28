@@ -1,1 +1,45 @@
 **/.DS_Store
+
+# fish state. fish_variables holds universal exported vars, including tokens.
+config/fish/fish_variables
+**/fish_history
+# Untracked file for secrets; fish loads conf.d/*.fish on startup
+config/fish/conf.d/*.local.fish
+
+# App configs under ~/.config that store logins or tokens
+config/.wrangler/
+config/gcloud/
+config/gh/hosts.yml
+config/acli/
+config/AWSVPNClient/
+config/configstore/
+config/1Password/
+config/git/credentials
+**/ngrok.yml
+**/mcp.json
+
+# Secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.ovpn
+*.keychain
+*.keychain-db
+id_rsa*
+id_ed25519*
+id_ecdsa*
+.netrc
+.npmrc
+.pypirc
+*credentials*.json
+
+# App logs and local databases
+**/logs/
+*.log
+*.db
+*.sqlite
